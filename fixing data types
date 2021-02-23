@@ -1,0 +1,30 @@
+Jupyter Notebook
+fix_datatypes_air_pollution
+(autosaved)
+Current Kernel Logo
+Python 3 
+File
+Edit
+View
+Insert
+Cell
+Kernel
+Widgets
+Help
+
+Code
+Fixing air_pollution_score Data Type
+2008: convert string to float
+2018: convert int to float
+Load datasets data_08_v3.csv and data_18_v3.csv. You should've created these data files in the previous section: Fixing Data Types Pt 1.
+
+# load datasets
+import pandas as pd
+df_08 = pd.read_csv('data_08_v3.csv')
+df_18 = pd.read_csv('data_18_v3.csv')
+​
+# try using pandas' to_numeric or astype function to convert the
+# 2008 air_pollution_score column to float -- this won't work
+df_08['air_pollution_score'] = pd.to_numeric(df_08['air_pollution_score'], errors='coerce')
+type(df_08.loc[0,"air_pollution_score"])
+numpy.float64
